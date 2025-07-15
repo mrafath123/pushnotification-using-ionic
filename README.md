@@ -7,10 +7,10 @@ ionic start Appname template --type=angular  --capacitor --package-id=com.devdat
 '''
 cd pushnotify
 '''**
-**step3:
+**step3:**
 '''
 ionic cap add android
-'''**
+'''
 **step4:**
 '''
 npm install @capacitor/push-notifications
