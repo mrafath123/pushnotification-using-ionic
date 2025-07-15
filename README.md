@@ -28,25 +28,29 @@ This document provides a step-by-step setup to enable push notifications in your
 ionic start Appname template --type=angular --capacitor --package-id=com.devdatic.devpush
 Replace Appname with your project name. Choose your desired template (e.g. blank, tabs, etc.).
 
-Step 2: Navigate to the project directory
-bash
+### Step 2: Navigate to the project directory
+```
 cd pushnotify
+```
 Ensure your directory matches the actual folder name.
 
-Step 3: Add Android platform
-bash
+### Step 3: Add Android platform
+```
 ionic cap add android
-Step 4: Install Push Notifications plugin
-bash
+```
+### Step 4: Install Push Notifications plugin
+```
 npm install @capacitor/push-notifications
 npx cap sync
-Step 5: Generate a service to handle push functionality
-bash
+```
+### Step 5: Generate a service to handle push functionality
+```
 ionic g service filename
+```
 In filename.service.ts, implement push notification logic: registration, token retrieval, and listeners.
 
 Also, add initialization logic in app.component.ts:
-
+```
 ts
 import { PushNotifications } from '@capacitor/push-notifications';
 
@@ -61,15 +65,18 @@ PushNotifications.requestPermissions().then(result => {
 PushNotifications.addListener('registration', (token) => {
   console.log('Device registered with token:', token.value);
 });
-Step 6: (Optional) Generate a page for redirection/navigation
-bash
+```
+### Step 6: (Optional) Generate a page for redirection/navigation
+```
 ionic g page pagename
+```
 Step 7: Build and open the Android project
-bash
+```
 ionic build
 npx cap sync
 ionic cap open android
-Step 8: Inspect in Chrome for token
+```
+### Step 8: Inspect in Chrome for token
 Connect your device or emulator.
 
 Open Chrome and go to chrome://inspect
@@ -80,20 +87,16 @@ Look for the token logged by console.log(token.value);
 
 Copy the token.
 
-Step 9: Firebase Cloud Messaging Testing
+### Step 9: Firebase Cloud Messaging Testing
 Go to Firebase Console
 
-Open Cloud Messaging tab.
+--> Open Cloud Messaging tab.
 
-Paste the retrieved token into the device token field.
+-->Paste the retrieved token into the device token field.
 
-Send a test notification.
+-->Send a test notification.
 
-Observe notification on device/emulator 🎉
+-->Observe notification on device/emulator 🎉
 
-📚 References
-🔗 Capacitor Push Notifications
-
-🔗 Firebase Cloud Messaging
 
 
