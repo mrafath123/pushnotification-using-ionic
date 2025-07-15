@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'redirect-notification',
+    loadChildren: () => import('./redirect-notification/redirect-notification.module').then( m => m.RedirectNotificationPageModule)
+  },
 ];
 
 @NgModule({
