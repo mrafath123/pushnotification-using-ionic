@@ -29,4 +29,4 @@ npx cap sync
 ionic cap open android
 '''
 ***step6:*** go to chrome/inspect in that check console click object get the token and paste it on firebase for testing
-![Uploading Screenshot 2025-07-15 145413.png…]()
+<img width="1920" height="1080" alt="Screenshot 2025-07-15 145413" src="https://github.com/user-attachments/assets/9b821ec6-0005-4135-96e1-0a4d7cc7ec5a" />
